@@ -126,7 +126,7 @@ set valence, off
 - NAC构象朝向问题-是出口还是入口
 
 ⑤CAVER通道
-
+出发点ASP101坐标，蛋白EPH.pdb
 
 
 ---
