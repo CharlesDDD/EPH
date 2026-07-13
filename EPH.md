@@ -128,6 +128,19 @@ set valence, off
 ⑤CAVER通道
 出发点ASP101坐标，蛋白EPH.pdb
 
+```bash
+# 找ligand5A范围残基
+# 方式2 这个sele加不加括号都一样
+temp=[];iterate (ligand5A_resides) and name CA, temp.append(resn+resi)
+
+# 和上面的分开打印不然就是乘法表那种形式，上面的运行完之后最后打印
+print(",".join(temp))
+
+
+```
+
+
+
 
 ---
 
