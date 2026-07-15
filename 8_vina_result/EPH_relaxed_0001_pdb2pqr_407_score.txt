@@ -1,0 +1,44 @@
+#################################################################
+# If you used AutoDock Vina in your work, please cite:          #
+#                                                               #
+# O. Trott, A. J. Olson,                                        #
+# AutoDock Vina: improving the speed and accuracy of docking    #
+# with a new scoring function, efficient optimization and       #
+# multithreading, Journal of Computational Chemistry 31 (2010)  #
+# 455-461                                                       #
+#                                                               #
+# DOI 10.1002/jcc.21334                                         #
+#                                                               #
+# Please see http://vina.scripps.edu for more information.      #
+#################################################################
+
+Reading input ... done.
+Setting up the scoring function ... done.
+Analyzing the binding site ... done.
+Using random seed: 642723500
+Performing search ... 
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+done.
+Refining results ... done.
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1         -7.1      0.000      0.000
+   2         -6.2      1.771      3.064
+   3         -4.4      2.883      8.348
+   4         -4.4      1.149      1.357
+   5         -3.7      3.709      9.029
+   6         -2.4      1.777      3.112
+   7         -2.3      1.293      2.878
+   8         -0.5      2.514      8.210
+   9         -0.3      1.995      7.165
+  10         -0.1      2.018      3.666
+  11         -0.1      1.527      2.140
+  12          0.4      2.820      8.543
+  13          2.0      2.407      8.036
+  14          2.1      1.480      7.528
+  15          2.4      2.440      4.161
+Writing output ... done.
