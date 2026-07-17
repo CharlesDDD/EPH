@@ -1,9 +1,12 @@
 ## 1. 质子化
+
 ---
-**①pdb2pqr/propka**
+
+### ①pdb2pqr/propka
+
 [emoji](https://gist.github.com/rxaviers/7360908)
-[文档](https://pdb2pqr.readthedocs.io/en/latest/):memo:
-[github](https://github.com/Electrostatics/pdb2pqr):point_left:
+[文档](https://pdb2pqr.readthedocs.io/en/latest/)📝
+[github](https://github.com/Electrostatics/pdb2pqr)👈
 
 ```bash
 ligand1:https://www.ebi.ac.uk/chebi/CHEBI:62456
@@ -22,17 +25,22 @@ ligand1 = "[H][C@@]12CC=C3C(C)(C)[C@@H](O)CC[C@@]3([H])[C@]1(C)CC[C@@]1(C)[C@@]2
 ligand2 = "[H][C@@]12CC=C3C(C)(C)[C@@H](O)CC[C@@]3([H])[C@]1(C)CC[C@@]1(C)[C@@]2(C)CC[C@]1([H])[C@H](C)CC[C@@H]1OC1(C)C"
 ligand3 = "C[C@H](CC[C@H](C(C)(C)O)O)[C@H]1CC[C@@]2([C@@]1(CC[C@@]3([C@H]2CC=C4[C@H]3CC[C@@H](C4(C)C)O)C)C)C"
 ```
-**②propka指令**
+
+### ②propka指令
+
 ```bash
 propka3 EPH.pdb -o 7.0
 ```
-- **EPH.pdb**：要预测Pka的pdb文件
-- **-o**：PH 
 
-**③pdb2pqr指令**
+- **EPH.pdb**：要预测Pka的pdb文件
+- **-o**：PH
+
+### ③pdb2pqr指令
+
 ```bash
 pdb2pqr --ff=AMBER --titration-state-method=propka --with-ph=7.0 --pdb-output=EPH_input_for_rosetta.pdb EPH.pdb EPH.pqr
 ```
+
 - **--ff=AMBER**：力场算法
 - **--titration-state-method=propka**：Propka做Pka预测
 - **--with-ph=7.0**：PH7
@@ -40,12 +48,14 @@ pdb2pqr --ff=AMBER --titration-state-method=propka --with-ph=7.0 --pdb-output=EP
 - **EPH.pdb**：输出文件pdb (参数必须)
 - **EPH.pqr**：输出的pqr添加缺失的重原子，优化氢键，使用力场如AMBER或CHARMM分配电荷和半径(参数必须)
 
-
 ## 2. 详细步骤
-**①先做WT的Fastrelax**
+
+### ①先做WT的Fastrelax
+
 - 至于为什么可以看**3**小节，WT做多库的能量最小化，MUT可以减少迭代次数
 - 先对AF3或其他结构预测模型的**EPH.pdb**结果做**Fastrelax**，优化侧链可能存在的clash
 - 结果：**EPH_relaxed_0001.pdb**
+
 ```bash
 #!/bin/bash
 /root/autodl-tmp/rosetta.binary.ubuntu.release-408/main/source/bin/relax.static.linuxgccrelease \
@@ -63,26 +73,34 @@ pdb2pqr --ff=AMBER --titration-state-method=propka --with-ph=7.0 --pdb-output=EP
     -nstruct 5 \
     -out:suffix _relaxed
 ```
-**②做pdb2pqr质子化**
+
+### ②做pdb2pqr质子化
+
 - 对Fastrelax结果**sc**文件找能量最低的pdb文件:**EPH_relaxed_0001.pdb**
 - 结果:**EPH_relaxed_0001_pdb2pqr.pdb**
 - HIS 295质子化带正电荷
+
 ```bash
 # 先对AF3结果的EPH结构Fastrelax在pdb2pqr指令
 pdb2pqr --ff=AMBER --titration-state-method=propka --with-ph=7.0 --pdb-output=EPH_relaxed_0001_pdb2pqr.pdb EPH_relaxed_0001.pdb EPH_relaxed_0001.pqr
 ```
-**③做Meeko转pdbqt**
+
+### ③做Meeko转pdbqt
+
 ```bash
 mk_prepare_ligand.py -i EPH_relaxed_0001_pdb2pqr.pdb -o EPH_relaxed_0001_pdb2pqr.pdbqt
 ```
+
 - 结果:**EPH_relaxed_0001_pdb2pqr.pdbqt**
 - 可以计算HIS295总电荷为+1
 
-**④vina/chai-1/AF3/boltz2分子对接找构象**
+### ④vina/chai-1/AF3/boltz2分子对接找构象
+
 - 催化三联体:101ASP 295HIS 260ASP
 - 阳阴离子洞:150Tyr & 230Tyr  二者到环氧氧距离3.0
 - 核心motif:HGFP--H31-G32-F33-P34(定位催化水)
 - **pdbqt文件准备**:Fastrelax->pdb2pqr->meeko
+
 ```bash
 '''
 1. vina找NAC构象指令
@@ -168,11 +186,13 @@ iterate_state 1, resi 101 and name OD1, print("Coordinates: X=%.3f, Y=%.3f, Z=%.
 # 关闭化合价显示
 set valence, off
 ```
+
 - ASP的OD2到C24 C25距离<3.5, 两个Tyr的-OH到环氧距离
 - 角度:攻击环氧背面的C24 25
 - NAC构象朝向问题-是出口还是入口
 
-⑤CAVER通道
+### ⑤CAVER通道
+
 出发点ASP101坐标，蛋白EPH.pdb
 
 ```bash
@@ -181,25 +201,44 @@ set valence, off
 temp=[];iterate (ligand5A_resides) and name CA, temp.append(resn+resi)
 print(",".join(temp))
 ```
-⑥foldx突变
-> meeko报错情况:残基原子距离太近，导致非必要的残基相连致使meeko模版识别不了，核心还是要优化clash
+
+### ⑥foldx突变
+
+#### (1) 突变结构优化原因
+
+> **(a) meeko报错情况:残基原子距离太近，导致非必要的残基相连致使meeko模版识别不了，核心还是要优化clash**
 
 ![image2](./images/image4.png)
 
-> 30的O原子和100的H原子距离1.1(就算是C和O的距离也是2.0优化后3.1)太近导致clash需要Fastrelax
+> **(b) 30的O原子和100的H原子距离1.1(就算是C和O的距离也是2.0优化后3.1)太近导致clash需要Fastrelax**
 
 ![image2](./images/image2.png)
 
-> fastrelax之后(重复优化2轮生成1个结果pdb)
+> **(c) fastrelax之后(重复优化2轮生成1个结果pdb)**
 
 ![image2](./images/image3.png)
+
+#### (2) MUTs结构优化步骤
+
 ```bash
-# 先做Repair
+'''
+1. 先做Repair
+'''
 ..\foldx --command=PrepairPDB --pdb=EPH_relaxed_0001_pdb2pqr.pdb
-# 对relax和质子化的pdb做突变结构
+
+'''
+2. 对relax和质子化的pdb做突变结构
+'''
 ..\foldx --command=BuildModel --pdb=EPH_relaxed_0001_pdb2pqr.pdb --mutant-file=individual_list.txt
+
+'''
+3. Repair之后再Repair(看看foldx的优化效果)
+    结论：对foldx的突变结构需要做Fastrelax，最彻底最根本
+'''
 # repair前后(对Fastrelax的结构做不做Repair)做buildmodel的ddG结果：基本没有影响(测试已经失败的就是有clash且meeko转换失败)
 # 结论：即使做了Repair再对这些失败的突变重新在Repair的基础上做buildmodel，基本无影响；即使再对MUT做Repair还是会有一部分转换失败，所以对foldx的突变结构需要做Fastrelax，最彻底最根本！
+# 一开始WT没有Repair，第二列为此ddG，Repair之后再突变ddG在第3列
+# 第2列再WT(无repair)-Repair去meeko，成功6个；WT(Repair)-Repair-meeko，成功9个
 HA100P;6.59812;6.59954
 AA104E;16.5016;15.5378
 AA104Q;15.1697;15.5286
@@ -213,7 +252,9 @@ LA172P;7.33239;7.82931
 TA175P;4.99328;4.4751
 SA176P;4.62825;4.72653
 
-# MUTs的Fastrelax指令
+'''
+4. MUTs的Fastrelax指令
+'''
 /root/autodl-tmp/rosetta.binary.ubuntu.release-408/main/source/bin/relax.static.linuxgccrelease \
     -database /root/autodl-tmp/rosetta.binary.ubuntu.release-408/main/database \
     -s EPH_relaxed_0001_pdb2pqr_12_H.pdb \
@@ -225,19 +266,28 @@ SA176P;4.62825;4.72653
     -relax:constrain_relax_to_start_coords \
     -relax:coord_constrain_sidechains \
     -nstruct 1 \
-    -out:suffix _r5
+    -out:suffix _r2
 
-# foldx的结果文件中有foldx开头的行所有需要批量去掉
-下面就是foldx输出的前3行
 '''
+5. foldx的结果文件中有foldx开头的行所有需要批量去掉
+'''
+下面就是foldx输出的前3行(要去掉)
+----------------------------------
 FoldX generated pdb file
 
 Output generated by <BuildModel>
+----------------------------------
+
+'''
+6. foldx结果中去掉了所有氢，所以还需要MUTs质子化，然后再meeko
 '''
 
-# foldx结果中去掉了所有氢，所以还需要MUTs质子化，然后再meeko
-# 1. 批量质子化(问题:foldx结果文件有3行非标准输出，需要处理去掉)
+'''
+6.1批量质子化(问题:foldx结果文件有3行非标准输出，需要处理去掉)
+'''
 # 批量--到418 pdb所在文件夹下运行
+--------------------------------------------------------------------
+
 #!/bin/bash
 for file in *.pdb; do 
     # 自动检测并清理FoldX的前三行
@@ -256,10 +306,14 @@ for file in *.pdb; do
             "EPH_MUTs_pdb2pqr_result/${base}.pqr"
 done 
 echo "所有文件批量质子化完成！已存入 EPH_MUTs_pdb2pqr_result 文件夹"
+--------------------------------------------------------------------
 # 统计文件
 ls *.pdb | wc -l
 
-# 2. 批量meeko(问题就是folx一开始就没有最后一列的原子名称，这时候meeko会报错，所以还需要再pdb2pqr结果文件中处理元素:batch_atom.py文件处理)
+''' 
+6.2. 批量meeko(问题就是folx一开始就没有最后一列的原子名称，这时候meeko会报错，所以还需要再pdb2pqr结果文件中处理元素:batch_atom.py文件处理)
+'''
+--------------------------------------------------------------------
 #!/bin/bash
 # 先创建好结果文件meeko_result
 # mkdir -p meeko_result
@@ -269,9 +323,13 @@ for file in *_H.pdb; do
     mk_prepare_receptor.py -i "$file" --write_pdbqt "meeko_result/${base}.pdbqt";
 done;
 echo "全部转换完成！存放在meeko_result文件夹中"
+--------------------------------------------------------------------
 
-# 3.meeko转换的结果中有12个存在原子冲突或额外的化学键，由于foldx突变的时候残基侧链原子间距离太近导致不该有的化学键
-# 3.1 找到12个文件
+'''
+6.3.meeko转换的结果中有12个存在原子冲突或额外的化学键，由于foldx突变的时候残基侧链原子间距离太近导致不该有的化学键
+'''
+# 6.3.1 找到12个文件
+--------------------------------------------------------------------
 echo "正在比对文件，以下是未成功生成 pdbqt 的 12 个文件："
 for file in *_H.pdb; do
     base="${file%_H.pdb}"
@@ -284,12 +342,13 @@ for file in *_H.pdb; do
     fi
 done
 echo "检查完毕！这12个源文件已复制到failed_12_pdbs/文件夹中"
-
+--------------------------------------------------------------------
 # 3.2 测试单个文件的meeko转换的详细问题原子间距离太近；直接舍弃这几个12个
 # 3.3 也可以按照foldx的ddg筛选掉一批，目前暂且舍弃那12个，转换成功的做对接
-
 ```
-⑦ vina对接
+
+### ⑦ vina对接
+
 ```bash
 # 4. vina对接(mac上做的):见vina.sh
 #!/bin/zsh
@@ -322,7 +381,8 @@ done
 echo "所有突变体对接任务已完成！"
 ```
 
-⑧最终筛选
+### ⑧最终筛选
+
 ```bash
 筛选标准：
 ASP101-C24/C25几何距离<3.5A
@@ -330,18 +390,21 @@ Tyr150/Tyr230-OH到环氧距离<3.0A
 # pymol对out.pdbqt对接结果找C24 C25结果
 # PyMOL中的ID与PDB文件中ATOM记录的原子序号保持一致
 ```
+
 ![image](./images/image1.png)
+
 `显示原子ID:label EPH_relaxed_0001_pdb2pqr_1_out, ID`
+
 ![image](./images/image.png)
-`看坐标(1就是第一个构象):PyMOL>iterate_state 1, ID 29, print(x,y,z)
--0.17800000309944153 20.19099998474121 0.4129999876022339`
-`pdbqt文件中: ATOM     29  C   UNL     1      -0.178  20.191   0.413  1.00  0.00     0.150 C 
-`
-### :memo:结果：C24-->ATOM29 C25-->ATOM31 O-->ATOM30
+
+> 看坐标(1就是第一个构象):PyMOL>iterate_state 1, ID 29, print(x,y,z)
+> -0.17800000309944153 20.19099998474121 0.4129999876022339`
+
+> pdbqt文件中: ATOM     29  C   UNL     1      -0.178  20.191   0.413  1.00  0.00     0.150 C
+
+> 📝**结果：C24-->ATOM29 C25-->ATOM31 O-->ATOM30**
+
 ---
-
-
-
 
 ## 3. Rosetta--Fastrelax模块测试
 
@@ -368,8 +431,10 @@ Tyr150/Tyr230-OH到环氧距离<3.0A
     -out:file:scorefile score_rawAF3_relaxed.sc \
 ```
 
-**①先pdb2pqr再Fastrelax**❌️
+### ①先pdb2pqr再Fastrelax❌️
+
 最终的
+
 ```bash
 core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] discarding 1 atoms at position 17 in file EPH_input_for_rosetta.pdb. Best match rsd_type:  HIS
 core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] discarding 1 atoms at position 100 in file EPH_input_for_rosetta.pdb. Best match rsd_type:  HIS
@@ -394,9 +459,10 @@ pdbqt文件中电荷总量
 ===0
 ```
 
+### ②先Fastrelax再pdb2pqr✅️
 
-**②先Fastrelax再pdb2pqr**✅️
 最终结果
+
 ```bash
 有质子HD1 HE2
 0.242
@@ -415,8 +481,11 @@ pdbqt文件中电荷总量
 ===1.00 对应Pka中的10.85
 
 ```
-**③换参数**
+
+### ③换参数
+
 和①一样的结果，rosetta还是会忽略❌️
+
 ```bash
 #!/bin/bash
 /root/autodl-tmp/rosetta.binary.ubuntu.release-408/main/source/bin/relax.static.linuxgccrelease \
@@ -440,4 +509,22 @@ pdbqt文件中电荷总量
 
 ```
 
+### ④default_repeats测试结果(平衡计算速度和质量)
 
+```bash
+default_repeats测试结果
+    1           2           3           5
+-1064.780   -898.700    -898.837    -898.903
+```
+
+> 📝结果：2基本已经收敛不用5轮算法优化，浪费时间，批量直接就用2就行了，足够松弛MUTs结构，平衡计算速度和结构优化质量
+> 根据之前WT的松弛结果来看，1个生成结果足够
+
+```bash
+-848.877
+-848.443
+-848.227
+-848.461
+-848.298
+# 另外一个在890附近，基本没有差别
+```
