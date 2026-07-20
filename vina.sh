@@ -21,7 +21,7 @@ for RECEPTOR in "$RECEPTOR_DIR"/*.pdbqt; do
         --ligand "$LIGAND" \
         --center_x -2.725 --center_y 7.632 --center_z -2.866 \
         --size_x 25 --size_y 25 --size_z 25 \
-        --cpu 9 --num_modes 20 --energy_range 10 --exhaustiveness 64 \
+        --cpu 9 --num_modes 30 --energy_range 20 --exhaustiveness 64 \
         --out "$OUT_DIR/${BASENAME}_out.pdbqt" \
         > "$OUT_DIR/${BASENAME}_score.txt"
 done

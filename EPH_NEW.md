@@ -112,6 +112,12 @@ mk_prepare_ligand.py -i EPH_relaxed_0001_pdb2pqr.pdb -o EPH_relaxed_0001_pdb2pqr
 vina.exe --receptor EPH_relaxed_0001_pdb2pqr.pdbqt --ligand ligand2_Conformer3D_COMPOUND_CID_171037431.pdbqt --center_x -2.638 --center_y 5.770 --center_z -0.390 --size_x 25 --size_y 25 --size_z 25 --cpu 6 --num_modes 40 --energy_range 100 --exhaustiveness 64 --out "result_vina\EPH_ligand2.pdbqt" > "result_vina\EPH_ligand2_score.txt"
 
 # 三点质心为盒子中心：-2.725, 7.632, -2.866✅️101asp 150tyr 230tyr
+#  (D101_OD2 + Y150_OH + Y230_OH) / 3
+-2.638   5.770  -0.390
+-4.340   9.857  -3.201
+-1.198   7.268  -5.006
+= -2.725, 7.632, -2.866
+
 vina.exe --receptor EPH_relaxed_0001_pdb2pqr.pdbqt --ligand ligand2_Conformer3D_COMPOUND_CID_171037431.pdbqt --center_x -2.725 --center_y 7.632 --center_z -2.866 --size_x 25 --size_y 25 --size_z 25 --cpu 6 --num_modes 40 --energy_range 100 --exhaustiveness 64 --out "result_vina\EPH_ligand2.pdbqt" > "result_vina\EPH_ligand2_score.txt"
 
 # 找合适的构象在pymol中保存
@@ -269,6 +275,11 @@ SA176P;4.62825;4.72653
 '''
 7. 对6的结果做meeko--见【batch_meeko.sh】
 '''
+
+'''
+8. vina对接，见【vina.sh】
+'''
+vina.exe --receptor EPH_relaxed_0001_pdb2pqr.pdbqt --ligand ligand2_Conformer3D_COMPOUND_CID_171037431.pdbqt --center_x -2.725 --center_y 7.632 --center_z -2.866 --size_x 25 --size_y 25 --size_z 25 --cpu 6 --num_modes 30 --energy_range 20 --exhaustiveness 64 --out "vina_test\EPH_ligand2.pdbqt" > "vina_test\EPH_ligand2_score.txt"
 ```
 
 ### ⑧最终筛选
