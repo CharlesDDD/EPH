@@ -269,15 +269,11 @@ SA176P;4.62825;4.72653
 '''
 
 '''
-6. 对5的结果做质子化--见【batch_pdb2pqr.sh】
+6. 对5的结果做meeko--见【batch_meeko.sh】
 '''
 
 '''
-7. 对6的结果做meeko--见【batch_meeko.sh】
-'''
-
-'''
-8. vina对接，见【vina.sh】
+7. vina对接，见【vina.sh】
 '''
 vina.exe --receptor EPH_relaxed_0001_pdb2pqr.pdbqt --ligand ligand2_Conformer3D_COMPOUND_CID_171037431.pdbqt --center_x -2.725 --center_y 7.632 --center_z -2.866 --size_x 25 --size_y 25 --size_z 25 --cpu 6 --num_modes 30 --energy_range 20 --exhaustiveness 64 --out "vina_test\EPH_ligand2.pdbqt" > "vina_test\EPH_ligand2_score.txt"
 ```
