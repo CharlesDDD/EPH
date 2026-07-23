@@ -1,5 +1,3 @@
-rosetta的Fastrelax能识别cif文件吗
-
 ## 1. 质子化
 
 ---
