@@ -10,11 +10,11 @@
 
 ```bash
 ligand1:https://www.ebi.ac.uk/chebi/CHEBI:62456
-老师给的(手性有问题): C/C(C)=C/CC[C@@H](C)C1CC[C@@]2(C)C3CC=C4C(C)(C)[C@@H](O)CCC4[C@]3(C)CC[C@@]21C
+老师给的: C/C(C)=C/CC[C@@H](C)C1CC[C@@]2(C)C3CC=C4C(C)(C)[C@@H](O)CCC4[C@]3(C)CC[C@@]21C
 3D:结构pubchem:14543446：https://pubchem.ncbi.nlm.nih.gov/compound/Cucurbitadienol#section=3D-Conformer
 
 ligand2(P450环氧):https://www.ebi.ac.uk/chebi/CHEBI:229949
-老师给的(手性有问题): C[C@H](CCC1C(C)(C)O1)C2CC[C@@]3(C)C4CC=C5C(C)(C)[C@@H](O)CCC5[C@]4(C)CC[C@@]32C
+老师给的: C[C@H](CCC1C(C)(C)O1)C2CC[C@@]3(C)C4CC=C5C(C)(C)[C@@H](O)CCC5[C@]4(C)CC[C@@]32C
 3D:结构：https://pubchem.ncbi.nlm.nih.gov/compound/171037431#section=3D-Conformer
 
 ligand3:(24,25-dihydroxy-cucurbitadienol) (水解-OH):https://pubchemlite.lcsb.uni.lu/e/compound/171037432
@@ -299,6 +299,14 @@ Tyr150/Tyr230-OH到环氧距离<3.0A
 
 > 📝**结果：C24-->ATOM29 C25-->ATOM31 O-->ATOM30**
 
+### ⑨几何距离筛选
+```bash
+# 需要对批量计算的结果做个检查，确保pymol中的计算和我们的脚本一致
+check_dist_angle.pse # 打开就行
+
+# 首先把只要任何一个pose满足OD2-C24-C25距离 < 3.5A的保留
+
+```
 ---
 
 ## 3. Rosetta--Fastrelax模块测试
