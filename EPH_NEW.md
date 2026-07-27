@@ -307,6 +307,39 @@ check_dist_angle.pse # 打开就行
 # 首先把只要任何一个pose满足OD2-C24-C25距离 < 3.5A的保留
 
 ```
+
+### ⑩PLACER复合结构提取
+```bash
+1. 批量的把_out结果用meeko转换为sdf--见【batch_vina_result_sdf.sh】✅️
+2. 将vina_result_Elite.csv文件中的mutant和rank,拿到最好的pose--见【batch_vina_result_sdf_pose.sh】✅️
+3. 将MUT的pdb文件(pdb2pqr之后的文件)哪找csv的mutant列单独取出来--见【batch_MUT_Elite_pdb.sh】✅️
+4. 将vina统计出来的这些MUT精英突变和对应的最好pose合成复合结构--见EPH_insilico.ipynb中的【6.2节】✅️
+
+
+
+# meeko将结果转换为sdf文件
+mk_export.py vina_results.pdbqt -s vina_results.sdf
+# openbabel拿rank的pose
+obabel EPH_ligand2_12and13.sdf -O pose_12.sdf -f 12 -l 12
+
+'''
+1. 指定ligand标识
+'''
+# 先给ligand指定链名C
+alter ligand, chain="B"
+
+# 统一残基编号和名字
+alter ligand, resi="1"
+alter ligand, resn="TRT"
+# 将 TRT 的原子名改为 "元素符号 + 原子编号"（例如 C1, C2, O6, H33）
+alter resn TRT, name = elem + str(ID)
+# 刷新内部坐标 PyMOL在alter修改属性后需要重新排序才能正确写入pdb
+sort
+# 合并保存AF3的P450+heme结果和Diffdock对接合理构象-->P450_heme_ligandrank6.pdb
+create merge, ligand or protein
+```
+
+
 ---
 
 ## 3. Rosetta--Fastrelax模块测试
