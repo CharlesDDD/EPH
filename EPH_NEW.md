@@ -314,7 +314,7 @@ check_dist_angle.pse # 打开就行
 2. 将vina_result_Elite.csv文件中的mutant和rank,拿到最好的pose--见【batch_vina_result_sdf_pose.sh】✅️
 3. 将MUT的pdb文件(pdb2pqr之后的文件)哪找csv的mutant列单独取出来--见【batch_MUT_Elite_pdb.sh】✅️
 4. 将vina统计出来的这些MUT精英突变和对应的最好pose合成复合结构--见EPH_insilico.ipynb中的【6.2节】✅️
-
+# ls -d */ | wc -l 统计文件夹数量
 
 
 # meeko将结果转换为sdf文件

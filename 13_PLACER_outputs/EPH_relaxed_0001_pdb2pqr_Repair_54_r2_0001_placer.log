@@ -1,0 +1,111 @@
+# device:  cuda:0
+Using checkpoint: /home/dongdong/PLACER/examples/../weights/PLACER_model_1.pt
+# variables:  5071802
+# number of PDB files to process: 1
+Reading ligand TRT reference definition from file: 13_PLACER_inputs/EPH_relaxed_0001_pdb2pqr_Repair_54_r2_0001_ligand.sdf
+Keeping these ligands fixed during prediction IF they are in the crop: [].
+--> 0 EPH_relaxed_0001_pdb2pqr_Repair_54_r2_0001_complex {ID:type/atoms/bonds} : {A:polypeptide(L)/5019/5100; B:nonpoly/82/86}
+model    1 :  fape= 2.74509  lddt= 0.88336  rmsd= 1.32858  kabsch= 0.92071  prmsd= 3.36481  plddt= 0.68937  plddt_pde= 0.71570  | time= 2.18s  mem= 3.08gb 
+model    2 :  fape= 3.18988  lddt= 0.82036  rmsd= 3.54906  kabsch= 1.52633  prmsd= 5.29050  plddt= 0.50437  plddt_pde= 0.58974  | time= 0.76s  mem= 3.21gb 
+model    3 :  fape= 2.58893  lddt= 0.88573  rmsd= 1.57367  kabsch= 0.83395  prmsd= 3.51365  plddt= 0.66125  plddt_pde= 0.70800  | time= 0.75s  mem= 3.21gb 
+model    4 :  fape= 2.73961  lddt= 0.87748  rmsd= 1.50034  kabsch= 0.93171  prmsd= 3.37612  plddt= 0.67312  plddt_pde= 0.75229  | time= 0.75s  mem= 3.21gb 
+model    5 :  fape= 2.69822  lddt= 0.88417  rmsd= 1.50312  kabsch= 1.19430  prmsd= 2.83435  plddt= 0.74250  plddt_pde= 0.72803  | time= 0.75s  mem= 3.21gb 
+model    6 :  fape= 3.15983  lddt= 0.82316  rmsd= 7.62127  kabsch= 1.75254  prmsd= 7.21852  plddt= 0.45625  plddt_pde= 0.46903  | time= 0.75s  mem= 3.21gb 
+model    7 :  fape= 2.98322  lddt= 0.84901  rmsd= 2.08897  kabsch= 1.03750  prmsd= 2.26216  plddt= 0.93500  plddt_pde= 0.75582  | time= 0.75s  mem= 3.21gb 
+model    8 :  fape= 2.58821  lddt= 0.89379  rmsd= 1.26267  kabsch= 0.90877  prmsd= 3.28280  plddt= 0.71625  plddt_pde= 0.70431  | time= 0.76s  mem= 3.21gb 
+model    9 :  fape= 3.27857  lddt= 0.81230  rmsd= 8.46792  kabsch= 1.87314  prmsd= 5.33761  plddt= 0.52125  plddt_pde= 0.54941  | time= 0.78s  mem= 3.21gb 
+model   10 :  fape= 2.67210  lddt= 0.89073  rmsd= 1.13969  kabsch= 0.80969  prmsd= 3.40562  plddt= 0.71000  plddt_pde= 0.73467  | time= 0.77s  mem= 3.21gb 
+model   11 :  fape= 3.00315  lddt= 0.84604  rmsd= 3.90115  kabsch= 1.42407  prmsd= 7.34937  plddt= 0.46125  plddt_pde= 0.47712  | time= 0.74s  mem= 3.21gb 
+model   12 :  fape= 3.14508  lddt= 0.81944  rmsd= 8.21955  kabsch= 2.08198  prmsd= 7.16957  plddt= 0.46625  plddt_pde= 0.51395  | time= 0.74s  mem= 3.21gb 
+model   13 :  fape= 2.68279  lddt= 0.88058  rmsd= 1.60796  kabsch= 1.00511  prmsd= 3.15852  plddt= 0.71625  plddt_pde= 0.71639  | time= 0.74s  mem= 3.21gb 
+model   14 :  fape= 2.69830  lddt= 0.87835  rmsd= 1.58235  kabsch= 1.17881  prmsd= 3.20674  plddt= 0.66938  plddt_pde= 0.67900  | time= 0.74s  mem= 3.21gb 
+model   15 :  fape= 3.32298  lddt= 0.80154  rmsd= 9.15818  kabsch= 1.15643  prmsd= 3.85201  plddt= 0.60312  plddt_pde= 0.66199  | time= 0.74s  mem= 3.21gb 
+model   16 :  fape= 3.39516  lddt= 0.79723  rmsd= 8.16824  kabsch= 2.06131  prmsd= 6.13372  plddt= 0.48375  plddt_pde= 0.56335  | time= 0.73s  mem= 3.21gb 
+model   17 :  fape= 3.19674  lddt= 0.81416  rmsd= 8.14945  kabsch= 2.02513  prmsd= 7.35719  plddt= 0.45437  plddt_pde= 0.48612  | time= 0.74s  mem= 3.21gb 
+model   18 :  fape= 2.84957  lddt= 0.86727  rmsd= 2.00026  kabsch= 1.62493  prmsd= 2.94377  plddt= 0.67937  plddt_pde= 0.67296  | time= 0.74s  mem= 3.21gb 
+model   19 :  fape= 3.03452  lddt= 0.86259  rmsd= 2.10400  kabsch= 1.81944  prmsd= 3.48578  plddt= 0.63437  plddt_pde= 0.64608  | time= 0.73s  mem= 3.21gb 
+model   20 :  fape= 2.52181  lddt= 0.89630  rmsd= 1.28591  kabsch= 0.73278  prmsd= 4.09770  plddt= 0.65188  plddt_pde= 0.66607  | time= 0.73s  mem= 3.21gb 
+model   21 :  fape= 3.27925  lddt= 0.80919  rmsd= 8.56453  kabsch= 1.47982  prmsd= 6.31501  plddt= 0.48375  plddt_pde= 0.60176  | time= 0.74s  mem= 3.21gb 
+model   22 :  fape= 2.42011  lddt= 0.90557  rmsd= 1.35497  kabsch= 0.79321  prmsd= 3.49838  plddt= 0.70125  plddt_pde= 0.73172  | time= 0.74s  mem= 3.21gb 
+model   23 :  fape= 2.88952  lddt= 0.86351  rmsd= 2.70874  kabsch= 2.11011  prmsd= 5.30649  plddt= 0.49937  plddt_pde= 0.59911  | time= 0.73s  mem= 3.21gb 
+model   24 :  fape= 2.98758  lddt= 0.85132  rmsd= 2.80325  kabsch= 2.15533  prmsd= 5.24218  plddt= 0.51375  plddt_pde= 0.60371  | time= 0.74s  mem= 3.21gb 
+model   25 :  fape= 2.50945  lddt= 0.90036  rmsd= 1.04190  kabsch= 0.81094  prmsd= 2.97727  plddt= 0.74625  plddt_pde= 0.74931  | time= 0.73s  mem= 3.21gb 
+model   26 :  fape= 3.27785  lddt= 0.82684  rmsd= 3.28329  kabsch= 1.86861  prmsd= 3.55740  plddt= 0.65687  plddt_pde= 0.59459  | time= 0.73s  mem= 3.21gb 
+model   27 :  fape= 2.92160  lddt= 0.86283  rmsd= 2.49954  kabsch= 2.01784  prmsd= 3.02176  plddt= 0.68375  plddt_pde= 0.63572  | time= 0.74s  mem= 3.21gb 
+model   28 :  fape= 2.68642  lddt= 0.87714  rmsd= 1.49407  kabsch= 0.86542  prmsd= 5.32340  plddt= 0.50125  plddt_pde= 0.65039  | time= 0.74s  mem= 3.21gb 
+model   29 :  fape= 2.80049  lddt= 0.87230  rmsd= 1.82779  kabsch= 1.15629  prmsd= 3.07297  plddt= 0.68750  plddt_pde= 0.66609  | time= 0.74s  mem= 3.21gb 
+model   30 :  fape= 2.65154  lddt= 0.88029  rmsd= 2.18344  kabsch= 1.13735  prmsd= 3.50489  plddt= 0.63250  plddt_pde= 0.65495  | time= 0.74s  mem= 3.21gb 
+model   31 :  fape= 2.91039  lddt= 0.86149  rmsd= 3.20174  kabsch= 2.03340  prmsd= 6.94236  plddt= 0.46125  plddt_pde= 0.53464  | time= 0.74s  mem= 3.21gb 
+model   32 :  fape= 2.50445  lddt= 0.89115  rmsd= 1.19997  kabsch= 0.88448  prmsd= 3.46787  plddt= 0.66000  plddt_pde= 0.76033  | time= 0.74s  mem= 3.21gb 
+model   33 :  fape= 2.61797  lddt= 0.88729  rmsd= 1.10257  kabsch= 0.79763  prmsd= 3.35252  plddt= 0.67812  plddt_pde= 0.66227  | time= 0.74s  mem= 3.21gb 
+model   34 :  fape= 3.03636  lddt= 0.84811  rmsd= 3.10938  kabsch= 2.15596  prmsd= 6.61484  plddt= 0.45500  plddt_pde= 0.57361  | time= 0.73s  mem= 3.21gb 
+model   35 :  fape= 2.81797  lddt= 0.85743  rmsd= 2.06647  kabsch= 1.29854  prmsd= 2.20297  plddt= 0.88625  plddt_pde= 0.76693  | time= 1.20s  mem= 3.21gb 
+model   36 :  fape= 2.93950  lddt= 0.83877  rmsd= 4.41503  kabsch= 2.16936  prmsd= 7.41295  plddt= 0.46875  plddt_pde= 0.44306  | time= 0.74s  mem= 3.21gb 
+model   37 :  fape= 2.75555  lddt= 0.87858  rmsd= 1.63620  kabsch= 1.39311  prmsd= 2.58018  plddt= 0.75312  plddt_pde= 0.71628  | time= 0.73s  mem= 3.21gb 
+model   38 :  fape= 2.53328  lddt= 0.89243  rmsd= 1.35978  kabsch= 0.90294  prmsd= 5.23390  plddt= 0.55875  plddt_pde= 0.65953  | time= 0.73s  mem= 3.21gb 
+model   39 :  fape= 3.06687  lddt= 0.84176  rmsd= 2.81548  kabsch= 2.10363  prmsd= 2.92241  plddt= 0.72625  plddt_pde= 0.65382  | time= 0.73s  mem= 3.21gb 
+model   40 :  fape= 2.82743  lddt= 0.87381  rmsd= 1.87434  kabsch= 0.91530  prmsd= 2.70496  plddt= 0.71750  plddt_pde= 0.71119  | time= 0.74s  mem= 3.21gb 
+model   41 :  fape= 3.15644  lddt= 0.85961  rmsd= 2.19477  kabsch= 1.84662  prmsd= 3.60658  plddt= 0.62062  plddt_pde= 0.63504  | time= 0.73s  mem= 3.21gb 
+model   42 :  fape= 2.96148  lddt= 0.85477  rmsd= 2.88021  kabsch= 2.27130  prmsd= 4.20988  plddt= 0.61250  plddt_pde= 0.60545  | time= 0.73s  mem= 3.21gb 
+model   43 :  fape= 3.21624  lddt= 0.82227  rmsd= 7.17097  kabsch= 1.91709  prmsd= 7.20043  plddt= 0.46000  plddt_pde= 0.45523  | time= 0.73s  mem= 3.21gb 
+model   44 :  fape= 2.75982  lddt= 0.87928  rmsd= 1.57530  kabsch= 0.85911  prmsd= 3.38032  plddt= 0.70812  plddt_pde= 0.69795  | time= 0.74s  mem= 3.21gb 
+model   45 :  fape= 2.84154  lddt= 0.85995  rmsd= 1.51663  kabsch= 1.17483  prmsd= 2.11474  plddt= 0.82750  plddt_pde= 0.73646  | time= 0.73s  mem= 3.21gb 
+model   46 :  fape= 2.72539  lddt= 0.87797  rmsd= 1.65086  kabsch= 1.24374  prmsd= 2.62763  plddt= 0.80812  plddt_pde= 0.71081  | time= 0.73s  mem= 3.21gb 
+model   47 :  fape= 3.16366  lddt= 0.81822  rmsd= 8.34525  kabsch= 1.41827  prmsd= 6.01926  plddt= 0.49875  plddt_pde= 0.62439  | time= 0.73s  mem= 3.21gb 
+model   48 :  fape= 3.44250  lddt= 0.79235  rmsd= 8.70220  kabsch= 1.52200  prmsd= 5.58853  plddt= 0.50375  plddt_pde= 0.62272  | time= 0.74s  mem= 3.21gb 
+model   49 :  fape= 3.30770  lddt= 0.80423  rmsd= 8.37539  kabsch= 1.89099  prmsd= 6.23059  plddt= 0.48937  plddt_pde= 0.59060  | time= 0.73s  mem= 3.21gb 
+model   50 :  fape= 2.80982  lddt= 0.85852  rmsd= 1.85201  kabsch= 1.31178  prmsd= 2.44277  plddt= 0.79062  plddt_pde= 0.74016  | time= 0.73s  mem= 3.21gb 
+model   51 :  fape= 3.23184  lddt= 0.81624  rmsd= 8.52063  kabsch= 1.19007  prmsd= 5.68902  plddt= 0.55250  plddt_pde= 0.55429  | time= 0.73s  mem= 3.21gb 
+model   52 :  fape= 2.93319  lddt= 0.87325  rmsd= 1.64883  kabsch= 1.27595  prmsd= 3.39182  plddt= 0.63687  plddt_pde= 0.65500  | time= 0.73s  mem= 3.21gb 
+model   53 :  fape= 2.88104  lddt= 0.86914  rmsd= 2.20520  kabsch= 1.88128  prmsd= 3.13644  plddt= 0.68375  plddt_pde= 0.63892  | time= 0.73s  mem= 3.21gb 
+model   54 :  fape= 2.73707  lddt= 0.87485  rmsd= 1.77310  kabsch= 0.83931  prmsd= 4.45298  plddt= 0.61125  plddt_pde= 0.67653  | time= 0.73s  mem= 3.21gb 
+model   55 :  fape= 2.63369  lddt= 0.88947  rmsd= 1.30492  kabsch= 0.87306  prmsd= 5.59993  plddt= 0.51687  plddt_pde= 0.62907  | time= 0.73s  mem= 3.21gb 
+model   56 :  fape= 2.76508  lddt= 0.88404  rmsd= 1.46431  kabsch= 0.73753  prmsd= 4.99558  plddt= 0.53750  plddt_pde= 0.64099  | time= 0.73s  mem= 3.21gb 
+model   57 :  fape= 2.62186  lddt= 0.88095  rmsd= 1.38886  kabsch= 0.77462  prmsd= 3.39981  plddt= 0.68562  plddt_pde= 0.66319  | time= 0.74s  mem= 3.21gb 
+model   58 :  fape= 2.47441  lddt= 0.89416  rmsd= 1.28680  kabsch= 0.80610  prmsd= 4.46899  plddt= 0.54250  plddt_pde= 0.69643  | time= 0.74s  mem= 3.21gb 
+model   59 :  fape= 2.88592  lddt= 0.85911  rmsd= 1.62317  kabsch= 1.21852  prmsd= 1.74274  plddt= 0.89000  plddt_pde= 0.74437  | time= 0.73s  mem= 3.21gb 
+model   60 :  fape= 2.67390  lddt= 0.87685  rmsd= 1.92129  kabsch= 0.63620  prmsd= 3.99571  plddt= 0.65000  plddt_pde= 0.66111  | time= 0.73s  mem= 3.21gb 
+model   61 :  fape= 2.80239  lddt= 0.87159  rmsd= 1.97551  kabsch= 1.12130  prmsd= 5.45976  plddt= 0.52375  plddt_pde= 0.61250  | time= 0.73s  mem= 3.21gb 
+model   62 :  fape= 3.16205  lddt= 0.81627  rmsd= 8.11090  kabsch= 1.53435  prmsd= 7.30677  plddt= 0.45125  plddt_pde= 0.49172  | time= 0.74s  mem= 3.21gb 
+model   63 :  fape= 2.86214  lddt= 0.86086  rmsd= 2.56381  kabsch= 1.68847  prmsd= 5.12787  plddt= 0.61125  plddt_pde= 0.63539  | time= 0.73s  mem= 3.21gb 
+model   64 :  fape= 2.60134  lddt= 0.88759  rmsd= 1.66730  kabsch= 0.77204  prmsd= 6.45660  plddt= 0.48750  plddt_pde= 0.57769  | time= 0.73s  mem= 3.21gb 
+model   65 :  fape= 3.00463  lddt= 0.85672  rmsd= 2.63639  kabsch= 2.15795  prmsd= 3.41752  plddt= 0.70438  plddt_pde= 0.68849  | time= 0.73s  mem= 3.21gb 
+model   66 :  fape= 2.59519  lddt= 0.88857  rmsd= 1.26855  kabsch= 0.95628  prmsd= 2.95010  plddt= 0.71437  plddt_pde= 0.69443  | time= 0.74s  mem= 3.21gb 
+model   67 :  fape= 2.94849  lddt= 0.85902  rmsd= 2.41719  kabsch= 1.94969  prmsd= 2.69172  plddt= 0.70812  plddt_pde= 0.61641  | time= 0.73s  mem= 3.21gb 
+model   68 :  fape= 3.04377  lddt= 0.85029  rmsd= 3.19307  kabsch= 2.06689  prmsd= 6.45673  plddt= 0.46562  plddt_pde= 0.51800  | time= 0.73s  mem= 3.21gb 
+model   69 :  fape= 3.17021  lddt= 0.81763  rmsd= 7.86616  kabsch= 2.08126  prmsd= 7.60010  plddt= 0.45000  plddt_pde= 0.48180  | time= 0.73s  mem= 3.21gb 
+model   70 :  fape= 2.83106  lddt= 0.87090  rmsd= 1.97213  kabsch= 0.93966  prmsd= 3.56289  plddt= 0.74625  plddt_pde= 0.65581  | time= 0.74s  mem= 3.21gb 
+model   71 :  fape= 3.14064  lddt= 0.84853  rmsd= 3.11089  kabsch= 2.09544  prmsd= 3.53408  plddt= 0.67062  plddt_pde= 0.66873  | time= 0.74s  mem= 3.21gb 
+model   72 :  fape= 2.59826  lddt= 0.88733  rmsd= 1.36751  kabsch= 1.02975  prmsd= 3.11561  plddt= 0.74187  plddt_pde= 0.74273  | time= 0.74s  mem= 3.21gb 
+model   73 :  fape= 2.86269  lddt= 0.87008  rmsd= 2.20496  kabsch= 1.74408  prmsd= 3.83970  plddt= 0.59938  plddt_pde= 0.64132  | time= 0.74s  mem= 3.21gb 
+model   74 :  fape= 2.88764  lddt= 0.87350  rmsd= 1.82500  kabsch= 1.38132  prmsd= 3.00142  plddt= 0.70000  plddt_pde= 0.66148  | time= 0.74s  mem= 3.21gb 
+model   75 :  fape= 2.62946  lddt= 0.87626  rmsd= 1.90931  kabsch= 1.37102  prmsd= 2.62020  plddt= 0.76250  plddt_pde= 0.72357  | time= 0.74s  mem= 3.21gb 
+model   76 :  fape= 3.23669  lddt= 0.81791  rmsd= 8.37149  kabsch= 1.56504  prmsd= 6.57209  plddt= 0.48250  plddt_pde= 0.53345  | time= 1.13s  mem= 3.21gb 
+model   77 :  fape= 2.96761  lddt= 0.86115  rmsd= 2.52466  kabsch= 2.09680  prmsd= 4.34188  plddt= 0.58187  plddt_pde= 0.66470  | time= 0.73s  mem= 3.21gb 
+model   78 :  fape= 2.65437  lddt= 0.88722  rmsd= 1.47003  kabsch= 0.87182  prmsd= 4.61806  plddt= 0.56875  plddt_pde= 0.65915  | time= 0.73s  mem= 3.21gb 
+model   79 :  fape= 2.80174  lddt= 0.87698  rmsd= 1.76056  kabsch= 0.96046  prmsd= 3.56768  plddt= 0.64312  plddt_pde= 0.68114  | time= 0.73s  mem= 3.21gb 
+model   80 :  fape= 2.91869  lddt= 0.86187  rmsd= 2.43994  kabsch= 1.99191  prmsd= 3.88143  plddt= 0.62750  plddt_pde= 0.65915  | time= 0.73s  mem= 3.21gb 
+model   81 :  fape= 2.91468  lddt= 0.82887  rmsd= 8.60628  kabsch= 1.27916  prmsd= 6.85526  plddt= 0.46937  plddt_pde= 0.57886  | time= 0.73s  mem= 3.21gb 
+model   82 :  fape= 2.65431  lddt= 0.88494  rmsd= 1.97524  kabsch= 1.00193  prmsd= 4.45610  plddt= 0.57062  plddt_pde= 0.64147  | time= 0.73s  mem= 3.21gb 
+model   83 :  fape= 2.63836  lddt= 0.89326  rmsd= 1.64409  kabsch= 0.76790  prmsd= 5.07072  plddt= 0.51750  plddt_pde= 0.66187  | time= 0.73s  mem= 3.21gb 
+model   84 :  fape= 3.29676  lddt= 0.80285  rmsd= 8.98334  kabsch= 1.22943  prmsd= 3.83301  plddt= 0.61250  plddt_pde= 0.64203  | time= 0.73s  mem= 3.21gb 
+model   85 :  fape= 2.93343  lddt= 0.86056  rmsd= 3.23058  kabsch= 2.13943  prmsd= 6.03135  plddt= 0.47500  plddt_pde= 0.56989  | time= 0.73s  mem= 3.21gb 
+model   86 :  fape= 3.43717  lddt= 0.79322  rmsd= 8.74888  kabsch= 1.84617  prmsd= 4.10211  plddt= 0.63375  plddt_pde= 0.73908  | time= 0.73s  mem= 3.21gb 
+model   87 :  fape= 3.34065  lddt= 0.80096  rmsd= 9.29360  kabsch= 1.85153  prmsd= 2.70486  plddt= 0.70812  plddt_pde= 0.63667  | time= 0.74s  mem= 3.21gb 
+model   88 :  fape= 3.35890  lddt= 0.79917  rmsd= 8.53693  kabsch= 1.38353  prmsd= 6.90669  plddt= 0.45937  plddt_pde= 0.60548  | time= 0.73s  mem= 3.21gb 
+model   89 :  fape= 3.11336  lddt= 0.82290  rmsd= 6.59053  kabsch= 2.22302  prmsd= 7.09274  plddt= 0.46000  plddt_pde= 0.47513  | time= 0.73s  mem= 3.21gb 
+model   90 :  fape= 2.71911  lddt= 0.86891  rmsd= 1.46674  kabsch= 1.07975  prmsd= 2.64351  plddt= 0.70500  plddt_pde= 0.70263  | time= 0.73s  mem= 3.21gb 
+model   91 :  fape= 2.74055  lddt= 0.87395  rmsd= 1.78268  kabsch= 0.99049  prmsd= 6.68123  plddt= 0.45562  plddt_pde= 0.58065  | time= 0.73s  mem= 3.21gb 
+model   92 :  fape= 3.36943  lddt= 0.79730  rmsd= 8.82617  kabsch= 1.70595  prmsd= 5.23196  plddt= 0.52375  plddt_pde= 0.60978  | time= 0.73s  mem= 3.21gb 
+model   93 :  fape= 3.35630  lddt= 0.79636  rmsd= 9.28613  kabsch= 1.25090  prmsd= 2.80349  plddt= 0.71062  plddt_pde= 0.67550  | time= 0.73s  mem= 3.21gb 
+model   94 :  fape= 2.94305  lddt= 0.85475  rmsd= 2.74883  kabsch= 2.06496  prmsd= 7.10462  plddt= 0.46062  plddt_pde= 0.48379  | time= 0.73s  mem= 3.21gb 
+model   95 :  fape= 3.35035  lddt= 0.79664  rmsd= 9.11765  kabsch= 1.62309  prmsd= 5.37781  plddt= 0.52688  plddt_pde= 0.60547  | time= 0.73s  mem= 3.21gb 
+model   96 :  fape= 2.57381  lddt= 0.87928  rmsd= 1.50180  kabsch= 0.90729  prmsd= 2.76235  plddt= 0.70000  plddt_pde= 0.65330  | time= 0.73s  mem= 3.21gb 
+model   97 :  fape= 3.04175  lddt= 0.85701  rmsd= 2.60358  kabsch= 2.11038  prmsd= 3.66976  plddt= 0.64437  plddt_pde= 0.66939  | time= 0.73s  mem= 3.21gb 
+model   98 :  fape= 2.68295  lddt= 0.87236  rmsd= 2.07198  kabsch= 0.79927  prmsd= 3.75859  plddt= 0.67812  plddt_pde= 0.65147  | time= 0.73s  mem= 3.21gb 
+model   99 :  fape= 2.61536  lddt= 0.87857  rmsd= 1.66122  kabsch= 1.22220  prmsd= 2.07515  plddt= 0.86812  plddt_pde= 0.73797  | time= 0.73s  mem= 3.21gb 
+model  100 :  fape= 3.12030  lddt= 0.82225  rmsd= 7.67079  kabsch= 1.69340  prmsd= 7.60245  plddt= 0.45750  plddt_pde= 0.46615  | time= 0.73s  mem= 3.21gb 
+Ranking predictions based on prmsd. This will make the model numbers, and the CSV file look different from the above printed results.
+Wrote generated models to 13_PLACER_outputs/EPH_relaxed_0001_pdb2pqr_Repair_54_r2_0001/EPH_relaxed_0001_pdb2pqr_Repair_54_r2_0001_complex_model.pdb
+Wrote scores to 13_PLACER_outputs/EPH_relaxed_0001_pdb2pqr_Repair_54_r2_0001/EPH_relaxed_0001_pdb2pqr_Repair_54_r2_0001_complex.csv
+Finished predicting 1 structures in 77.56 seconds.
